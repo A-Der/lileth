@@ -9,7 +9,7 @@ export default function Form() {
   const onSubmit = (data) => {
     dispatch(createPost(data));
     reset();
-  };
+  }
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -18,22 +18,27 @@ export default function Form() {
             type="text"
             name="author"
             placeholder="Author"
-            {...register}
+            {...register('author')}
           />
         </div>
         <div>
-          <input type="text" name="title" placeholder="Title" {...register} />
+          <input 
+          type="text" 
+          name="title" 
+          placeholder="Title"
+          {...register('title')}
+          />
         </div>
-        <div>
+        {/* <div>
           <input
             type="text"
             name="article"
             placeholder="article"
-            {...register}
+            {...register('article')}
           />
-        </div>
-        <button type="submit">Submit</button>
+        </div> */}
+        <input type="submit" value="Submit" />
       </form>
     </>
-  );
+  )
 }
