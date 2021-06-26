@@ -12,7 +12,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-logo-box">
-          <img className="nav-logo" src="eye-logo.png" alt="Logo" />
+          <img className="nav-logo" src="eye-logo-blue.png" alt="Logo" />
         </div>
         
         <div class="navbar-start">

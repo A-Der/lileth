@@ -6,6 +6,7 @@ import { getPosts } from "./_actions/posts";
 import Form from "./components/form/Form";
 import Navbar from "./components/common/Navbar";
 import Home from "./components/pages/Home";
+import Footer from "./components/common/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,11 +14,14 @@ function App() {
     dispatch(getPosts);
   }, [dispatch]);
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Home />
-      {/* <Form /> */}
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Home />
+        {/* <Form /> */}
+      </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 export default App;
