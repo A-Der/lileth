@@ -10,21 +10,30 @@ AOS.init();
 
 class Home extends React.Component {
   render() {
-    const cardMaker = (img, alt, title, text) => (
-      <div className="card-container">
-        <div className="card-image">
-          <img
+    const cardMaker = (img, alt, title, text, delay) => (
+      // <div className="card-container">
+      //   <div className="card-image">
+      //     <img
+      //       src={img}
+      //       alt={alt}
+      //       style={{ height: "100px", width: "auto", padding: "20px", border: '2px solid #4A4A4A', borderRadius: '45%' }}
+      //     />
+      //   </div>
+      //   <div className="card-content">
+      //     <div className="content">
+      //       <h4 style={{ color: "white" }}>{title}</h4>
+      //       {text}
+      //     </div>
+      //   </div>
+      // </div>
+      <div className="card-container" data-aos="fade-up" data-aos-delay={delay}>
+        <img
             src={img}
             alt={alt}
-            style={{ height: "90px", width: "auto", padding: "10px 0 0 0" }}
-          />
-        </div>
-        <div className="card-content">
-          <div className="content">
-            <h4 style={{ color: "white" }}>{title}</h4>
-            {text}
-          </div>
-        </div>
+            style={{ height: "100px", width: "auto", padding: "10px", border: '2px solid #4A4A4A', borderRadius: '45%', borderColor: 'white' }}
+            />
+            <p style={{fontSize: '25px', color: 'white'}}>{title}</p>
+          <div style={{textAlign: 'center', color: 'white'}}>{text}</div>
       </div>
     );
 
@@ -32,25 +41,32 @@ class Home extends React.Component {
       healingHands,
       "healing-hands",
       "Healing",
-      "Would you benefit from healing? Our healing clinics are held fortnightly on a Saturday and we are introducing two new therapies, which will run alongside the Healing clinic, Reiki and Aromatherapy Massage Please see the Healing Clinics page here for further details"
+      // "Would you benefit from healing? Our healing clinics are held fortnightly on a Saturday and we are introducing two new therapies, which will run alongside the Healing clinic, Reiki and Aromatherapy Massage Please see the Healing Clinics page here for further details"
+      "In-house healing clinics run fortnightly",
+      100
     );
     const card2 = cardMaker(
       angel,
       "angel-wings",
       "Angel & Fairy Cards",
-      "Enhance your intuition by learning to read Angel and Fairy Cards. Practice on your fellow students in a relaxed environment. Sessions are held once a month on a Saturday and are open to non-members. The cost is £5 per session payable on the day. Please see our Development and Training page here for dates."
+      // "Enhance your intuition by learning to read Angel and Fairy Cards. Practice on your fellow students in a relaxed environment. Sessions are held once a month on a Saturday and are open to non-members. The cost is £5 per session payable on the day. Please see our Development and Training page here for dates."
+      "Monthly session to practice learning Angel and Fairy Cards",
+      200
     );
     const card3 = cardMaker(
       leader,
       "leader",
       "Become a Healer",
-      "Do you have a desire to help others? Ever considered becoming a Spiritual Healer? We offer a complete training programme. Also we offer a new Meditation Course. Please see our Development and Training page here for details."
+      // "Do you have a desire to help others? Ever considered becoming a Spiritual Healer? We offer a complete training programme. Also we offer a new Meditation Course. Please see our Development and Training page here for details."
+      "We have an array of options for people who are considering becoming a Spiritual Healer",
+      300
     );
     const card4 = cardMaker(
       tarot,
       "tarot",
       "Psychic Readings",
-      "Looking for guidance and would like a psychic reading? We hold monthly special events on a Saturday evening. Please see our Events Calendar page here for further details."
+      "Looking for guidance and would like a psychic reading? We hold monthly special events on a Saturday evening",
+      400
     );
 
     return (

@@ -6,8 +6,8 @@ class Navbar extends React.Component {
     return (
       <div class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item">Home</a>
-          <a class="navbar-item">Development & Training</a>
+          <Link to="/" className="navbar-item"><span>Home</span></Link>
+          <Link to="/Development&Training" className="navbar-item"><span>Development & Training</span></Link>
           <a class="navbar-item">Healing Clinics</a>
         </div>
 

@@ -5,8 +5,9 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "./_actions/posts";
 import Form from "./components/form/Form";
 import Navbar from "./components/common/Navbar";
-import Home from "./components/pages/Home";
 import Footer from "./components/common/Footer";
+import Home from "./components/pages/Home";
+import Development from "./components/pages/Development";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +18,8 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <Home />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Development&Training" component={Development} />
         {/* <Form /> */}
       </BrowserRouter>
       <Footer />
