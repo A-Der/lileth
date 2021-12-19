@@ -1,81 +1,83 @@
 import React from "react";
 import { withRouter } from "react-router";
-import healingHands from "../styles/assets/hands-logo-white.png";
-import angel from "../styles/assets/angel-white.png";
-import leader from "../styles/assets/leader-white.png";
-import tarot from "../styles/assets/tarot-white.png";
+import healingHandsWhite from "../styles/assets/hands-logo-white.png";
+import healingHandsBlue from "../styles/assets/hands-blue.png";
+import angelWhite from "../styles/assets/angel-white.png";
+import angelBlue from "../styles/assets/angel-blue.png";
+import leaderWhite from "../styles/assets/leader-white.png";
+import leaderBlue from "../styles/assets/leader-blue.png";
+import tarotWhite from "../styles/assets/tarot-white.png";
+import tarotBlue from "../styles/assets/tarot-blue.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
 class Home extends React.Component {
-  render() {
-    const cardMaker = (img, alt, title, text, delay) => (
-      // <div className="card-container">
-      //   <div className="card-image">
-      //     <img
-      //       src={img}
-      //       alt={alt}
-      //       style={{ height: "100px", width: "auto", padding: "20px", border: '2px solid #4A4A4A', borderRadius: '45%' }}
-      //     />
-      //   </div>
-      //   <div className="card-content">
-      //     <div className="content">
-      //       <h4 style={{ color: "white" }}>{title}</h4>
-      //       {text}
-      //     </div>
-      //   </div>
-      // </div>
-      <div className="card-container" data-aos="fade-up" data-aos-delay={delay}>
-        <img
-            src={img}
-            alt={alt}
-            style={{ height: "100px", width: "auto", padding: "10px", border: '2px solid #4A4A4A', borderRadius: '45%', borderColor: 'white' }}
-            />
-            <p style={{fontSize: '25px', color: 'white'}}>{title}</p>
-          <div style={{textAlign: 'center', color: 'white'}}>{text}</div>
-      </div>
-    );
 
-    const card1 = cardMaker(
-      healingHands,
-      "healing-hands",
-      "Healing",
-      // "Would you benefit from healing? Our healing clinics are held fortnightly on a Saturday and we are introducing two new therapies, which will run alongside the Healing clinic, Reiki and Aromatherapy Massage Please see the Healing Clinics page here for further details"
-      "In-house healing clinics run fortnightly",
-      100
-    );
-    const card2 = cardMaker(
-      angel,
-      "angel-wings",
-      "Angel & Fairy Cards",
-      // "Enhance your intuition by learning to read Angel and Fairy Cards. Practice on your fellow students in a relaxed environment. Sessions are held once a month on a Saturday and are open to non-members. The cost is £5 per session payable on the day. Please see our Development and Training page here for dates."
-      "Monthly session to practice learning Angel and Fairy Cards",
-      200
-    );
-    const card3 = cardMaker(
-      leader,
-      "leader",
-      "Become a Healer",
-      // "Do you have a desire to help others? Ever considered becoming a Spiritual Healer? We offer a complete training programme. Also we offer a new Meditation Course. Please see our Development and Training page here for details."
-      "We have an array of options for people who are considering becoming a Spiritual Healer",
-      300
-    );
-    const card4 = cardMaker(
-      tarot,
-      "tarot",
-      "Psychic Readings",
-      "Looking for guidance and would like a psychic reading? We hold monthly special events on a Saturday evening",
-      400
-    );
+  imgBorderColour = '#8292FC';
+
+  state = {
+    healingHandsImg: healingHandsBlue,
+    angelImg: angelBlue,
+    leaderImg: leaderBlue,
+    tarotImg: tarotBlue,
+    handsBorderColor: this.imgBorderColour,
+    angelBorderColor: this.imgBorderColour,
+    leaderBorderColor: this.imgBorderColour,
+    tarotBorderColor: this.imgBorderColour,
+  }
+
+  render() {
+    
+    const { healingHandsImg, angelImg, leaderImg, tarotImg, handsBorderColor, angelBorderColor, leaderBorderColor, tarotBorderColor } = this.state;
+
+    const style = borderColor => ({
+      height: "100px",
+      width: "auto",
+      padding: "10px",
+      marginTop: "5px",
+      border: "2px solid #4A4A4A",
+      borderRadius: "45%",
+      borderColor,
+    });
+
+    const handleOnMouse = (direction = 'e', name) => {
+      const border = `${name}BorderColor`;
+      const borderColor = direction === 'e' ? 'white' : this.imgBorderColour;
+      switch(name){
+        case 'hands':
+          const handsImg = direction === 'e' ? healingHandsWhite : healingHandsBlue;
+          this.setState({ healingHandsImg: handsImg, [border]: borderColor });
+          break;
+        case 'angel':
+          const angelImg = direction === 'e' ? angelWhite : angelBlue;
+          this.setState({ angelImg: angelImg, [border]: borderColor });
+          break;
+        case 'leader':
+          const leaderImg = direction === 'e' ? leaderWhite : leaderBlue;
+          this.setState({ leaderImg: leaderImg, [border]: borderColor});
+          break;
+        case 'tarot':
+          const tarotImg = direction === 'e' ? tarotWhite : tarotBlue;
+          this.setState({ tarotImg: tarotImg, [border]: borderColor });
+          break;
+          default:
+            return null
+          };
+    };
 
     return (
       <>
-        <div className="hero"></div>
-        <div data-aos="fade-in">
+        <div className="hero" data-aos="fade-in" data-aos-duration={2000}>
+          <div className="hero-info">
+            <span className="home-title"> The Lileth Healing Sanctuary </span>
+            <span className="home-subtitle">A Place For All</span>
+          </div>
+        </div>
+        <div data-aos="fade-in" data-aos-duration={2000}>
           <div className="home-info">
-            <div className="home-title"> The Lileth Healing Sanctuary </div>
-            <div className="home-subtitle">A Place For All</div>
+            {/* <div className="home-title"> The Lileth Healing Sanctuary </div>
+            <div className="home-subtitle">A Place For All</div> */}
             <br></br>
             <div className="home-text">
               A very warm welcome to the Lileth Website. We are a registered
@@ -96,11 +98,70 @@ class Home extends React.Component {
 
           <hr className="divider" />
 
-          <div className="cards-container" data-aos="fade-up">
-            {card1}
-            {card2}
-            {card3}
-            {card4}
+          <div class="cards-container">
+            <div class="box" data-aos="fade-up" data-aos-delay={100} onMouseEnter={() => handleOnMouse('e', 'hands')} onMouseLeave={() => handleOnMouse('l', 'hands')}>
+              <div class="boxContent">
+                <i class="fa fa-microchip icon"></i>
+                <h1 class="title">Healing</h1>
+                <p class="desc">In-house healing clinics run fortnightly</p>
+                <br></br>
+                <img
+                  src={healingHandsImg}
+                  alt={"healing"}
+                  style={style(handsBorderColor)}
+                />
+              </div>
+              {/* <a href="#"></a> */}
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-delay={200} onMouseEnter={() => handleOnMouse('e', 'angel')} onMouseLeave={() => handleOnMouse('l', 'angel')}>
+              <div class="boxContent">
+                <i class="fa fa-calendar icon"></i>
+                <h1 class="title">Angel & Fairy Cards</h1>
+                <p class="desc">
+                  Monthly session to practice learning Angel and Fairy Cards
+                </p>
+                <br></br>
+                  <img
+                  src={angelImg}
+                  alt={"angel"}
+                  style={style(angelBorderColor)}
+                />
+              </div>
+              {/* <a href="#"></a> */}
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-delay={300} onMouseEnter={() => handleOnMouse('e', 'leader')} onMouseLeave={() => handleOnMouse('l', 'leader')}>
+              <div class="boxContent">
+                <i class="fa fa-podcast icon"></i>
+                <h1 class="title">Become a Healer</h1>
+                <p class="desc">
+                  Talk to us if you are considering
+                  a path in Spiritual Healing
+                </p>
+                <br></br>
+                <img
+                  src={leaderImg}
+                  alt={"leader"}
+                  style={style(leaderBorderColor)}
+                />
+              </div>
+              {/* <a href="#"></a> */}
+            </div>
+            <div class="box" data-aos="fade-up" data-aos-delay={400} onMouseEnter={() => handleOnMouse('e', 'tarot')} onMouseLeave={() => handleOnMouse('l', 'tarot')}>
+              <div class="boxContent">
+                <i class="fa fa-podcast icon"></i>
+                <h1 class="title">Psychic Readings</h1>
+                <p class="desc">
+                  We hold monthly special events on a Saturday evening
+                </p>
+                <br></br>
+                <img
+                  src={tarotImg}
+                  alt={"tarot"}
+                  style={style(tarotBorderColor)}
+                />
+              </div>
+              {/* <a href="#"></a> */}
+            </div>
           </div>
 
           <hr className="divider" />
@@ -124,6 +185,72 @@ class Home extends React.Component {
               </p>
             </div>
           </div>
+
+          {/* <div class="cards-container">
+            <div class="box">
+              <div class="boxContent">
+                <i class="fa fa-microchip icon"></i>
+                <h1 class="title">Healing</h1>
+                <p class="desc">In-house healing clinics run fortnightly</p>
+                <br></br>
+                <img
+                  src={healingHands}
+                  alt={"healing"}
+                  style={style}
+                />
+              </div>
+              <a href="#"></a>
+            </div>
+            <div class="box">
+              <div class="boxContent">
+                <i class="fa fa-calendar icon"></i>
+                <h1 class="title">Angel & Fairy Cards</h1>
+                <p class="desc">
+                  Monthly session to practice learning Angel and Fairy Cards
+                </p>
+                <br></br>
+                  <img
+                  src={angel}
+                  alt={"angel"}
+                  style={style}
+                />
+              </div>
+              <a href="#"></a>
+            </div>
+            <div class="box">
+              <div class="boxContent">
+                <i class="fa fa-podcast icon"></i>
+                <h1 class="title">Become a Healer</h1>
+                <p class="desc">
+                  Talk to us if you are considering
+                  a path in Spiritual Healing
+                </p>
+                <br></br>
+                <img
+                  src={leader}
+                  alt={"leader"}
+                  style={style}
+                />
+              </div>
+              <a href="#"></a>
+            </div>
+            <div class="box">
+              <div class="boxContent">
+                <i class="fa fa-podcast icon"></i>
+                <h1 class="title">Psychic Readings</h1>
+                <p class="desc">
+                  We hold monthly special events on a Saturday evening
+                </p>
+                <br></br>
+                <img
+                  src={tarot}
+                  alt={"tarot"}
+                  style={style}
+                />
+              </div>
+              <a href="#"></a>
+            </div>
+          </div> */}
         </div>
       </>
     );
