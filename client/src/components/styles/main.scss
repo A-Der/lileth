@@ -1,15 +1,29 @@
+/* Variables */
+$hoverBgColor : #503bff;
+$hoverBgColor2: #8293ff;
+
 * {
   margin: 0px;
-  font-family: 'Cormorant', Georgia, "Times New Roman", serif;
+  font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
 }
 
 //titles 'Montserrat',Helvetica,Arial,Lucida,sans-serif;''
+/// 'Cormorant', Georgia, "Times New Roman", serif
 
 /* NAV BAR */
 
 .nav-menu {
   display: flex;
-  font-size: 20px;
+  font-size: 18px;
+  height: 65px;
+  background: grey;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  z-index: 100;
 }
 
 .nav-end {
@@ -28,10 +42,11 @@ a.nav-item:hover {
 
 .nav-logo-box {
   margin: 0 2em 0 2em;
+  cursor: pointer;
 }
 
 .nav-logo {
-  height: 5.75rem;
+  height: 4rem;
 }
 
 .divider {
@@ -68,7 +83,7 @@ section.section {
 /* HOME*/
 .hero,
 .dev-hero {
-  background-image: url(./assets/fall.jpg);
+  background-image: url(./assets/rainbow-waterfall.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -93,6 +108,7 @@ section.section {
 
 .hero-info {
   color: blue;
+  text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
 }
 
 .home-text {
@@ -130,9 +146,6 @@ section.section {
 }
 
 
-/* Variables */
-$hoverBgColor : #503bff;
-$hoverBgColor2: #8293ff;
 
 /* Mixins */
 @mixin createBox($width, $height, $bRadius, $bgColor, $margin) {
@@ -167,7 +180,6 @@ body {
       align-items: center;
       text-align: center;
 
-      // padding: 15px;
       .icon {
         color: #8293ff;
         font-size: 48px;
@@ -254,16 +266,18 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   z-index: 99;
 
-  .development-subsection{
+  .development-subsection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 3em 0 5em;
-    .development-subsection-title{
+
+    .development-subsection-title {
       font-size: 60px;
     }
-    .development-subsection-subtitle{
+
+    .development-subsection-subtitle {
       font-size: 20px;
       text-align: center;
       font-style: italic;
@@ -272,39 +286,97 @@ body {
   }
 
   .board {
-    --grid-size: 2; /* Start with 4x4 */
+    --grid-size: 2;
     display: grid;
     grid-template: repeat(var(--grid-size), 1fr) / repeat(var(--grid-size), 1fr);
+    width: 75%;
+    margin: auto;
   }
-  
+
   .square {
     display: grid;
     place-items: center;
     font-size: 30px;
     text-align: center;
+
     img {
       width: 100%;
       height: auto;
     }
   }
-  
-    .development-subtitle {
-      // font-family: proxima-nova, sans-serif;
-      // font-style: normal;
-      font-size: 30px;
-    }
-    
-    .development-text {
-      font-size: 30px;
-    }
 
-    .no-limit-slogan{
+  .square.text {
+    width: 80%;
+  }
+
+  .development-text {
+    font-size: 30px;
+  }
+
+  .no-limit-slogan {
     font-size: 20px;
     text-align: center;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 300;
     margin: 4em 0 4em;
   }
-  
+
+  .development-title {
+    font-size: 30px;
+    text-align: center;
+    margin: 1em;
+  }
+
+  .dev-panels {
+    width: 75%;
+    margin: auto;
+
+    .accordion {
+      // background-color: $hoverBgColor;
+      font-size: 30px;
+
+      &:hover,
+      .Mui-expanded,
+      .MuiAccordionDetails-root {
+        background-color: $hoverBgColor2;
+      }
+    }
+  }
 }
+
 /* END OF DEVELOPMENT SECTION */
+
+/* HC SECTION */
+.hc-page {
+}
+  .hc-hero {
+    background-image: url(./assets/reiki.jpg);
+    height: 45em;
+    background-size: cover;
+  }
+
+    .hc-hero-info {
+      // position: absolute;
+      // top: 0;
+      // right: 0;
+      // bottom: 0;
+      // left: 0;
+      // background-color: rgba(0, 0, 0, .4);
+      // z-index: 99;
+      // display: flex;
+      // align-content: center;
+      // justify-content: center;
+    }
+
+      .hc-title {
+        text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+      }
+
+
+//   .hc-subtitle {
+//     text-align: center;
+//     font-size: 25px;
+//     text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+//     width: 75%;
+//   }
+// }

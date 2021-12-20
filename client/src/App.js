@@ -8,6 +8,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import Home from "./components/pages/Home";
 import Development from "./components/pages/Development";
+import HealingClinics from "./components/pages/HealingClinics";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/Development&Training" component={Development} />
+        <Route exact path="/HealingClinics" component={HealingClinics} />
         {/* <Form /> */}
       </BrowserRouter>
       <Footer />

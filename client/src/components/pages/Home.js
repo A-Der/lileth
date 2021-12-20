@@ -111,9 +111,8 @@ class Home extends React.Component {
                   style={style(handsBorderColor)}
                 />
               </div>
-              {/* <a href="#"></a> */}
             </div>
-            <div class="box" data-aos="fade-up" data-aos-delay={200} onMouseEnter={() => handleOnMouse('e', 'angel')} onMouseLeave={() => handleOnMouse('l', 'angel')}>
+            <div class="box" data-aos="fade-up" data-aos-delay={250} onMouseEnter={() => handleOnMouse('e', 'angel')} onMouseLeave={() => handleOnMouse('l', 'angel')}>
               <div class="boxContent">
                 <i class="fa fa-calendar icon"></i>
                 <h1 class="title">Angel & Fairy Cards</h1>
@@ -127,9 +126,8 @@ class Home extends React.Component {
                   style={style(angelBorderColor)}
                 />
               </div>
-              {/* <a href="#"></a> */}
             </div>
-            <div class="box" data-aos="fade-up" data-aos-delay={300} onMouseEnter={() => handleOnMouse('e', 'leader')} onMouseLeave={() => handleOnMouse('l', 'leader')}>
+            <div class="box" data-aos="fade-up" data-aos-delay={400} onMouseEnter={() => handleOnMouse('e', 'leader')} onMouseLeave={() => handleOnMouse('l', 'leader')}>
               <div class="boxContent">
                 <i class="fa fa-podcast icon"></i>
                 <h1 class="title">Become a Healer</h1>
@@ -144,9 +142,8 @@ class Home extends React.Component {
                   style={style(leaderBorderColor)}
                 />
               </div>
-              {/* <a href="#"></a> */}
             </div>
-            <div class="box" data-aos="fade-up" data-aos-delay={400} onMouseEnter={() => handleOnMouse('e', 'tarot')} onMouseLeave={() => handleOnMouse('l', 'tarot')}>
+            <div class="box" data-aos="fade-up" data-aos-delay={550} onMouseEnter={() => handleOnMouse('e', 'tarot')} onMouseLeave={() => handleOnMouse('l', 'tarot')}>
               <div class="boxContent">
                 <i class="fa fa-podcast icon"></i>
                 <h1 class="title">Psychic Readings</h1>
@@ -160,7 +157,6 @@ class Home extends React.Component {
                   style={style(tarotBorderColor)}
                 />
               </div>
-              {/* <a href="#"></a> */}
             </div>
           </div>
 
@@ -185,72 +181,6 @@ class Home extends React.Component {
               </p>
             </div>
           </div>
-
-          {/* <div class="cards-container">
-            <div class="box">
-              <div class="boxContent">
-                <i class="fa fa-microchip icon"></i>
-                <h1 class="title">Healing</h1>
-                <p class="desc">In-house healing clinics run fortnightly</p>
-                <br></br>
-                <img
-                  src={healingHands}
-                  alt={"healing"}
-                  style={style}
-                />
-              </div>
-              <a href="#"></a>
-            </div>
-            <div class="box">
-              <div class="boxContent">
-                <i class="fa fa-calendar icon"></i>
-                <h1 class="title">Angel & Fairy Cards</h1>
-                <p class="desc">
-                  Monthly session to practice learning Angel and Fairy Cards
-                </p>
-                <br></br>
-                  <img
-                  src={angel}
-                  alt={"angel"}
-                  style={style}
-                />
-              </div>
-              <a href="#"></a>
-            </div>
-            <div class="box">
-              <div class="boxContent">
-                <i class="fa fa-podcast icon"></i>
-                <h1 class="title">Become a Healer</h1>
-                <p class="desc">
-                  Talk to us if you are considering
-                  a path in Spiritual Healing
-                </p>
-                <br></br>
-                <img
-                  src={leader}
-                  alt={"leader"}
-                  style={style}
-                />
-              </div>
-              <a href="#"></a>
-            </div>
-            <div class="box">
-              <div class="boxContent">
-                <i class="fa fa-podcast icon"></i>
-                <h1 class="title">Psychic Readings</h1>
-                <p class="desc">
-                  We hold monthly special events on a Saturday evening
-                </p>
-                <br></br>
-                <img
-                  src={tarot}
-                  alt={"tarot"}
-                  style={style}
-                />
-              </div>
-              <a href="#"></a>
-            </div>
-          </div> */}
         </div>
       </>
     );

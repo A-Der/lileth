@@ -1,0 +1,1 @@
+export const smallDividerStyle = { margin: '2.5em'};
