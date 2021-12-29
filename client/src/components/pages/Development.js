@@ -8,6 +8,9 @@ import DevPanels from "../lib/DevPanels";
 AOS.init();
 
 class Development extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="development-page">
@@ -100,8 +103,9 @@ class Development extends React.Component {
             yourself
           </p>
           <hr className="divider" style={{}} />
-
-          <p className="development-title">Other Ways To Work With <i>Spirit</i></p>
+          <p className="development-title">
+            Other Ways To Work With <i>Spirit</i>
+          </p>
 
           {DevPanels()}
         </div>

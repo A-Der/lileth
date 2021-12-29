@@ -7,6 +7,9 @@ import waterfall from "../styles/assets/waterfall-yellow.jpg";
 AOS.init();
 
 class Membership extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+}
   render() {
     return (
       <div className="membership-page">
@@ -30,10 +33,10 @@ class Membership extends React.Component {
             <p>• Ability to train as a healer</p>
             <p>• Once fully qualified as a healer you can join the Advance Healing course</p>
           </div>
+          <br></br>
+        <p><i>Get in touch with us if you wish to become a member</i></p>
         </div>
-        <p>Get in touch with us if you wish to become a member</p>
 
-        contact details
       </div>
     );
   }

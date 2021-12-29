@@ -10,6 +10,7 @@ import Home from "./components/pages/Home";
 import Development from "./components/pages/Development";
 import HealingClinics from "./components/pages/HealingClinics";
 import Membership from "./components/pages/Membership";
+import Contact from "./components/pages/Contact";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/Development&Training" component={Development} />
         <Route exact path="/HealingClinics" component={HealingClinics} />
         <Route exact path="/BecomeAMember" component={Membership} />
+        <Route exact path="/Contact" component={Contact} />
         {/* <Form /> */}
       </BrowserRouter>
       <Footer />

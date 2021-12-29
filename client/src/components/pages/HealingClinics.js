@@ -7,6 +7,9 @@ import healing2 from "../styles/assets/healing2.jpg";
 AOS.init();
 
 class HealingClinics extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="hc-page">

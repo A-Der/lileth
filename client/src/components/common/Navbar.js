@@ -6,13 +6,11 @@ import instaIcon from "../styles/assets/instagram.png";
 function Navbar() {
   const [eyeLogo, setEyeLogo] = useState("eye-logo-blue.png");
 
-  const HandleRouteChange = (data) => {
-    window.location = data;
-  };
   const home = "/";
   const development = "/Development&Training";
   const healing = "/HealingClinics";
   const membership = "/BecomeAMember";
+  const contact = "/Contact";
 
   const handleOnMouse = (direction = "e") => {
     if (direction === "e") {
@@ -52,25 +50,28 @@ function Navbar() {
         <Link to={membership} className={getClassName(membership)}>
           Become A Member
         </Link>
+        <Link to={contact} className={getClassName(contact)}>
+          Contact
+        </Link>
         <div className="social-box">
-          <img
-            className="facebook-icon"
-            onClick={() =>
-              HandleRouteChange(
-                "https://www.facebook.com/profile.php?id=100005362395878"
-              )
-            }
-            src={facebookIcon}
-            alt="facebook-icon"
-          />
-          <img
-            className="insta-icon"
-            src={instaIcon}
-            onClick={() =>
-              HandleRouteChange("https://www.instagram.com/lilethhealing/")
-            }
-            alt="instagram-icon"
-          />
+          <a
+            target="_blank"
+            href="https://www.facebook.com/profile.php?id=100005362395878"
+            rel="noreferrer"
+          >
+            <img
+              className="facebook-icon"
+              src={facebookIcon}
+              alt="facebook-icon"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/lilethhealing/"
+            rel="noreferrer"
+          >
+            <img className="insta-icon" src={instaIcon} alt="instagram-icon" />
+          </a>
         </div>
       </div>
     </nav>

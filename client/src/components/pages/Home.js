@@ -31,6 +31,10 @@ class Home extends React.Component {
     tarotModalStatus: false,
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+}
+
   render() {
     const {
       handsImg,
@@ -328,7 +332,7 @@ class Home extends React.Component {
 
           <hr className="divider" />
 
-          <div className="class-info" data-aos="fade-up">
+          <div className="class-info">
             <div className="class-info-text">
               <h1 style={{ fontSize: "45px" }}>
                 <span style={{ fontSize: "45px" }}>◎</span> Development Circle -
