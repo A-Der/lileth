@@ -1,8 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router";
 import ReactModal from "react-modal";
-import healingHandsWhite from "../styles/assets/hands-logo-white.png";
-import healingHandsBlue from "../styles/assets/hands-blue.png";
+import handsWhite from "../styles/assets/hands-logo-white.png";
+import handsBlue from "../styles/assets/hands-blue.png";
 import angelWhite from "../styles/assets/angel-white.png";
 import angelBlue from "../styles/assets/angel-blue.png";
 import leaderWhite from "../styles/assets/leader-white.png";
@@ -17,7 +17,7 @@ class Home extends React.Component {
   imgBorderColour = "#8292FC";
 
   state = {
-    healingHandsImg: healingHandsBlue,
+    handsImg: handsBlue,
     angelImg: angelBlue,
     leaderImg: leaderBlue,
     tarotImg: tarotBlue,
@@ -25,13 +25,15 @@ class Home extends React.Component {
     angelBorderColor: this.imgBorderColour,
     leaderBorderColor: this.imgBorderColour,
     tarotBorderColor: this.imgBorderColour,
-    reikiModalStatus: false,
-    massageModalStatus: false
+    handsModalStatus: false,
+    angelModalStatus: false,
+    leaderModalStatus: false,
+    tarotModalStatus: false,
   };
 
   render() {
     const {
-      healingHandsImg,
+      handsImg,
       angelImg,
       leaderImg,
       tarotImg,
@@ -39,8 +41,10 @@ class Home extends React.Component {
       angelBorderColor,
       leaderBorderColor,
       tarotBorderColor,
-      reikiModalStatus,
-      massageModalStatus
+      handsModalStatus,
+      angelModalStatus,
+      leaderModalStatus,
+      tarotModalStatus,
     } = this.state;
 
     const style = (borderColor) => ({
@@ -58,9 +62,8 @@ class Home extends React.Component {
       const borderColor = direction === "e" ? "white" : this.imgBorderColour;
       switch (name) {
         case "hands":
-          const healingHandsImg =
-            direction === "e" ? healingHandsWhite : healingHandsBlue;
-          this.setState({ healingHandsImg, [border]: borderColor });
+          const handsImg = direction === "e" ? handsWhite : handsBlue;
+          this.setState({ handsImg, [border]: borderColor });
           break;
         case "angel":
           const angelImg = direction === "e" ? angelWhite : angelBlue;
@@ -92,8 +95,23 @@ class Home extends React.Component {
     const handleModal = (name) => {
       const modal = name + "ModalStatus";
       const status = this.state[[modal]];
-      console.log(modal, status)
-      this.setState({ [modal]: !status });
+      const border = `${name}BorderColor`;
+      const imageName = name + "Img";
+      const image =
+        name === "hands"
+          ? handsBlue
+          : name === "angel"
+          ? angelBlue
+          : name === "leader"
+          ? leaderBlue
+          : tarotBlue;
+      this.setState({
+        [modal]: !status,
+        [imageName]: image,
+        leaderImg: leaderBlue,
+        leaderBorderColor: this.imgBorderColour,
+        [border]: this.imgBorderColour,
+      });
     };
 
     return (
@@ -106,8 +124,6 @@ class Home extends React.Component {
         </div>
         <div data-aos="fade-in" data-aos-duration={2000}>
           <div className="home-info">
-            {/* <div className="home-title"> The Lileth Healing Sanctuary </div>
-            <div className="home-subtitle">A Place For All</div> */}
             <br></br>
             <div className="home-text">
               A very warm welcome to the Lileth Website. We are a registered
@@ -135,25 +151,26 @@ class Home extends React.Component {
               data-aos-delay={100}
               onMouseEnter={() => handleOnMouse("e", "hands")}
               onMouseLeave={() => handleOnMouse("l", "hands")}
-              onClick={() => handleModal("reiki")}
+              onClick={() => handleModal("hands")}
             >
               <div className="boxContent">
                 <i className="fa fa-microchip icon"></i>
                 <h1 className="title">What is Reiki?</h1>
                 {/* <p className="desc">In-house healing clinics run fortnightly</p> */}
-
-
+                <br></br>
+                <br></br>
                 <br></br>
                 <img
-                  src={healingHandsImg}
+                  src={handsImg}
                   alt={"healing"}
                   style={style(handsBorderColor)}
                 />
                 <ReactModal
-                  isOpen={reikiModalStatus}
+                  isOpen={handsModalStatus}
                   style={customModalStyles}
+                  ariaHideApp={false}
+                  overlayClassName="Overlay"
                 >
-                  <button onClick={() => handleModal("reiki")}>Close Modal</button>
                   Reiki is a non-invasive treatment and can be used on all age
                   groups from babies to pensioners, regardless of present
                   medical complications. It is a complimentary and not an
@@ -162,7 +179,16 @@ class Home extends React.Component {
                   problems, anxiety, headaches, stomach upsets, sinus problems,
                   blood pressure and asthma, just to mention a few.. Reiki has
                   been regulated and approved by the Complementary and Natural
-                  Healthcare Council (CNHC)
+                  Healthcare Council (CNHC). Reiki (pronounced ray-key) is
+                  defined as spiritual energy, or the beautiful and loving life
+                  force that surrounds and embodies all living things. When we
+                  experience stress, pain, illness or worry, our energy often
+                  becomes unbalanced, impeding the natural flow of energy
+                  through the body. Reiki helps to return the body’s flow of
+                  energy to its intended state of harmony and creates a state of
+                  peacefulness and calming. Reiki is a holistic, natural
+                  hands-on system that promotes healing in body, mind and
+                  spirit.
                 </ReactModal>
               </div>
             </div>
@@ -172,7 +198,7 @@ class Home extends React.Component {
               data-aos-delay={250}
               onMouseEnter={() => handleOnMouse("e", "angel")}
               onMouseLeave={() => handleOnMouse("l", "angel")}
-              onClick={() => handleModal("massage")}
+              onClick={() => handleModal("angel")}
             >
               <div className="boxContent">
                 <i className="fa fa-calendar icon"></i>
@@ -187,6 +213,22 @@ class Home extends React.Component {
                   alt={"angel"}
                   style={style(angelBorderColor)}
                 />
+                <ReactModal
+                  isOpen={angelModalStatus}
+                  style={customModalStyles}
+                  ariaHideApp={false}
+                  overlayClassName="Overlay"
+                >
+                  Aromatherapy Massage is a non-invasive treatment and can be
+                  used on all age groups from babies to pensioners. It is
+                  complimentary and not an alternative to medical treatment.
+                  Usually the massage will involve back, shoulders, neck, arms
+                  and hands. Using aromatic oils mixed with a base oil and
+                  lightly massaged on mentioned areas. The oils are chosen by
+                  the therapist according to the patient’s needs. However, any
+                  current medical condition should be discuss with the therapist
+                  beforehand.
+                </ReactModal>
               </div>
             </div>
             <div
@@ -195,13 +237,14 @@ class Home extends React.Component {
               data-aos-delay={400}
               onMouseEnter={() => handleOnMouse("e", "leader")}
               onMouseLeave={() => handleOnMouse("l", "leader")}
+              onClick={() => handleModal("leader")}
             >
               <div className="boxContent">
                 <i className="fa fa-podcast icon"></i>
-                <h1 className="title">Become a Healer</h1>
-                <p className="desc">
+                <h1 className="title">Thinking Of Becoming A Healer?</h1>
+                {/* <p className="desc">
                   Talk to us if you are considering a path in Spiritual Healing
-                </p>
+                </p> */}
                 <br></br>
                 <img
                   src={leaderImg}
@@ -209,11 +252,40 @@ class Home extends React.Component {
                   style={style(leaderBorderColor)}
                 />
                 <ReactModal
-                  isOpen={massageModalStatus}
+                  isOpen={leaderModalStatus}
                   style={customModalStyles}
+                  ariaHideApp={false}
+                  overlayClassName="Overlay"
                 >
-                  <button onClick={() => handleModal("massage")}>Close Modal</button>
-                  Aromatherapy Massage is a non-invasive treatment and can be used on all age groups from babies to pensioners. It is a complimentary and not an alternative to medical treatment. Usually the massage will involve back, shoulders, necks arms and hands. Using aromatic oils mixed with a base oil and lightly massage above mention areas. The oils are chosen by the therapist according to the patient’s needs. However current medical condition should be discuss with the therapist prior to the massage.
+                  <p>
+                    <i>
+                      "A healer’s power stems not from any special ability, but
+                      from maintaining the courage and awareness to embody and
+                      express the universal healing power that every human being
+                      naturally possesses."
+                    </i>
+                    - E. Leventhal.
+                  </p>
+                  <br></br>
+                  <p>
+                    At heart, we all have the capacity to heal ourselves and
+                    nurture others. Spirit, energy, thought, intention, skillful
+                    practice, and belief are available to all people. Yet as
+                    individual expressions of the life force, we all have
+                    different paths, and not all of us feel called to healing
+                    practices.
+                  </p>
+                  <br></br>
+                  Spiritual healers come in many shapes and forms. For example,
+                  some may find their way through writing. Others through
+                  practicing reiki, kinesiology, yoga, meditation, hypnotherapy,
+                  psychotherapy, herbalism, acupuncture, EFT, and a whole range
+                  of other practices. Many people study by themselves – however,
+                  with that being said, formal study can help to hone these
+                  innate talents. To become a spiritual healer, focus on what
+                  subjects and topics you’re drawn to – that is your path.
+                  <br></br>
+                  Here at the Lileth we offer ..
                 </ReactModal>
               </div>
             </div>
@@ -223,36 +295,50 @@ class Home extends React.Component {
               data-aos-delay={550}
               onMouseEnter={() => handleOnMouse("e", "tarot")}
               onMouseLeave={() => handleOnMouse("l", "tarot")}
+              onClick={() => handleModal("tarot")}
             >
               <div className="boxContent">
                 <i className="fa fa-podcast icon"></i>
-                <h1 className="title">Psychic Readings</h1>
-                <p className="desc">
+                <h1 className="title">What Are Psychic Readings?</h1>
+                {/* <p className="desc">
                   We hold monthly special events on a Saturday evening
-                </p>
+                </p> */}
                 <br></br>
                 <img
                   src={tarotImg}
                   alt={"tarot"}
                   style={style(tarotBorderColor)}
                 />
+                <ReactModal
+                  isOpen={tarotModalStatus}
+                  style={customModalStyles}
+                  ariaHideApp={false}
+                  overlayClassName="Overlay"
+                >
+                  Psychic reading is to discern information or divine guidance
+                  through the use of heightened perceptive abilities. These are
+                  extensions of the basic human senses of sight, sound, touch,
+                  taste and instinct. These natural extensions are Clairvoyance
+                  (vision), Clairsentience (feeling), Claircognisance (factual
+                  knowing) and Clairaudience (hearing).
+                </ReactModal>
               </div>
             </div>
           </div>
 
-          <hr classNameName="divider" />
+          <hr className="divider" />
 
           <div className="class-info" data-aos="fade-up">
             <div className="class-info-text">
-              <h1 style={{ fontSize: "50px" }}>
-                <span style={{ fontSize: "50px" }}>◎</span> Development Circle -
+              <h1 style={{ fontSize: "45px" }}>
+                <span style={{ fontSize: "45px" }}>◎</span> Development Circle -
                 Join us in class at the Lileth
               </h1>
               <p>
                 Development Circle runs weekly on a Wednesday from 8pm to 10pm.
                 Each week in the month focuses on a particular area. We cover
                 clairvoyance, guided meditation, aura readings, psychometry,
-                pendulum dowsing, healing to name but a few. <br></br>
+                pendulum dowsing and healing to name but a few. <br></br>
                 <br></br>
                 <span style={{ fontSize: "20px" }}>
                   For non-members, the cost is £6 per evening payable on the

@@ -4,7 +4,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div class="footer">
-        © 2021 The Lileth Healing Sanctuary
+        © 2022 The Lileth Healing Sanctuary 🌙
       </div>
     );
   }

@@ -10,8 +10,9 @@ import {
 function DevPanels() {
   return (
     <div className="dev-panels">
+      
       <Accordion className="accordion">
-        <AccordionSummary expandIcon={<FilterVintage />}>
+        <AccordionSummary className="accordion-title" expandIcon={<FilterVintage />}>
           Deep Core Meditation Workshop
         </AccordionSummary>
 
@@ -27,8 +28,8 @@ function DevPanels() {
         </AccordionSummary>
 
         <AccordionDetails>
-          Using the ancient art of Tarot Cards and updating this to the
-          beautiful, colourful detail shown on Angel and Fairy Cards. We use the
+          Using the ancient art of Tarot Cards and updating this to incorporating the
+          beautiful, colourful Angel and Fairy Cards. We use the
           cards in our guided layouts to interpret and evoke intuition and
           psychic abilities. You will be surprised at how quickly you adapt to
           this art and how accurate these type of readings become. In a friendly
@@ -39,7 +40,7 @@ function DevPanels() {
           This will take place the 1st Saturday of every month from 14:00 to
           15:30 and open to non-members at a cost of £5 per session.
           <br></br>
-          Please let us know in advance, to make sure you can secure your space.
+          Please let us know in advance, so we can secure your place.
         </AccordionDetails>
       </Accordion>
 
@@ -64,9 +65,11 @@ function DevPanels() {
           qualified healers with a recognised organisation.
           <br></br>
           <br></br>
-          Please note you can only train as a healer if you are a member. Annual
-          membership at the Lileth is £50 per annum which also covers you for
-          insurance and if only training as a healer, £10 per session held once
+          You can only train as a healer if you are a member. Annual
+          membership at the Lileth is £50 per annum which also covers your
+          insurance. 
+          <br></br>
+          If only training as a healer, £10 per session held once
           a month on a Wednesday evening. You will also be required to assist as
           often as possible at the Saturday Healing under the guidance of a
           fully qualified healer.
@@ -79,7 +82,7 @@ function DevPanels() {
           <br></br>
           <br></br>
           You will find we provide a very balanced programme to qualify as a
-          healer at a very reasonable cost!
+          healer at a very reasonable cost.
         </AccordionDetails>
       </Accordion>
 

@@ -16,7 +16,7 @@ $hoverBgColor2: #8293ff;
   display: flex;
   font-size: 18px;
   height: 65px;
-  background: rgba(245, 245, 245, 0.562);
+  background: rgba(245, 245, 245, 0.637);
   position: fixed;
   /* Set the navbar to fixed position */
   top: 0;
@@ -24,6 +24,23 @@ $hoverBgColor2: #8293ff;
   width: 100%;
   /* Full width */
   z-index: 100;
+}
+
+.social-box {
+  display: flex;
+  align-items: center;
+  margin: 3em;
+
+  .facebook-icon {
+    height: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .insta-icon {
+    height: 40px;
+    cursor: pointer;
+  }
 }
 
 .nav-end {
@@ -40,8 +57,12 @@ a.nav-item:hover {
   color: white;
 }
 
+.is-active {
+  border-bottom: 1px solid rgba(0, 0, 255, 0.562);
+}
+
 .nav-logo-box {
-  margin: 0 2em 0 2em;
+  margin: 0 2em 0 2.5em;
   cursor: pointer;
 }
 
@@ -50,7 +71,7 @@ a.nav-item:hover {
 }
 
 .divider {
-  margin: 80px;
+  margin: 40px 80px;
 }
 
 .footer {
@@ -58,7 +79,7 @@ a.nav-item:hover {
   padding: 10px 0 10px 0;
   text-align: center;
   color: white;
-  background: rgb(31, 31, 253);
+  background: rgb(16, 16, 43);
 }
 
 section.section {
@@ -81,15 +102,24 @@ section.section {
 
 
 /* HOME*/
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
 .hero,
 .dev-hero,
 .hc-hero {
-  background-image: url(./assets/rainbow-waterfall.png);
+  background-image: url(./assets/falls-yellow.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 40em;
+  height: 48em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,19 +127,30 @@ section.section {
 
 .home-info,
 .hero-info,
-.dev-hero-info {
+.dev-hero-info,
+.membership-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 5em;
   padding: 25px 0 25px 0;
-  // color: rgb(46, 42, 42);
   color: white;
 }
 
 .hero-info {
-  color: blue;
-  text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+  color: rgb(155, 190, 229);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.651);
+  background-color: rgba(0, 0, 0, 0.356);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .home-subtitle {
+    font-size: 3rem;
+  }
 }
 
 .home-text {
@@ -117,16 +158,16 @@ section.section {
   text-align: center;
   width: 60%;
   margin: auto;
-  /* color: rgb(46, 42, 42); */
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.692);
 }
 
 .class-info {
-  background-image: url(./assets//card-reading.jpeg);
+  background-image: url(./assets//tarotace.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 45em;
+  height: 40em;
   display: flex;
   align-items: flex-end;
   color: white;
@@ -167,7 +208,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  height: 97vh;
 
   .box {
     @include createBox(250px, 350px, 10px, white, 20px);
@@ -227,6 +267,7 @@ body {
 
 /* END OF HOME SECTION */
 
+
 /* DEVELOPMENT SECTION */
 .development-page {
   // margin: 20px;
@@ -245,7 +286,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 99;
   display: flex;
   align-content: center;
@@ -295,6 +336,7 @@ body {
     grid-template: repeat(var(--grid-size), 1fr) / repeat(var(--grid-size), 1fr);
     width: 75%;
     margin: auto;
+    margin-top: 50px;
   }
 
   .square {
@@ -335,15 +377,9 @@ body {
     width: 75%;
     margin: auto;
 
-    .accordion {
-      // background-color: $hoverBgColor;
-      font-size: 30px;
-
-      &:hover,
-      .Mui-expanded,
-      .MuiAccordionDetails-root {
-        background-color: #ae82ff3b;
-      }
+    .MuiAccordionSummary-root {
+      background-color: rgba(160, 160, 223, 0.233);
+      font-size: 20px;
     }
   }
 }
@@ -363,34 +399,56 @@ body {
   .hc-section {
     padding: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    font-size: 1em;
-    font-weight: 300;
-    
-    .hc-text {
-      font-size: 25px;
-      // text-align: center;
-      width: 60%;
-      // margin: auto;
-      // margin-top: 5em;
-    }
+    font-size: 0.8em;
+
     img {
       height: 30em;
       border-radius: 30%;
     }
-    .icon-box{
-      display: flex;
-      align-items: center;
-    }
-    .lotus-icon{
-      font-size: 1px;
+
+    .lotus-icon {
+      font-size: 0.8px;
       margin-right: 25px;
     }
   }
 
-  .hc-info-box {
-    width: 70%;
-    margin: auto;
+  .hc-text {
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(20, 20, 58);
+
+    .icon-box {
+      display: flex;
+      align-items: center;
+    }
+
+    .hc-text-left,
+    .hc-text-right {
+      width: 600px;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      align-content: center;
+    }
+  }
+
+  .hc-info-container {
+    display: flex;
+    justify-content: space-around;
+
+    .hc-info-box {
+      width: 55%;
+    }
+
+    .hc-info-image {
+      display: flex;
+      height: 30em;
+    }
   }
 
   .hc-info {
@@ -400,8 +458,50 @@ body {
   .hc-info-title {
     font-size: 2em;
     font-weight: 600;
-    // padding-top: 3em;
     padding-bottom: 20px;
   }
+}
 
+//* END OF HC PAGE *//
+
+//* START OF MEMBERHSI PAGE *//
+.membership-page {
+  // height: 2000px;
+
+  .membership-title {
+    color: whitesmoke;
+    background-color: rgb(16, 16, 43);
+    padding-top: 50px;
+    height: 230px;
+    font-size: 3.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .membership-subtitle {
+    font-size: 17px;
+  }
+
+  .membership-info {
+    background-color: rgba(0, 0, 0, 0.233);
+    width: 100%;
+    font-size: 25px;
+    text-align: left;
+    // width: 60%;
+    // margin: auto;
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+
+    .membership-info-title {
+      font-size: 1em;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+
+    .membership-info-text {
+      text-align: left;
+      margin-left: 18%;
+    }
+  }
 }

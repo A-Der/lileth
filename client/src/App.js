@@ -9,6 +9,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/pages/Home";
 import Development from "./components/pages/Development";
 import HealingClinics from "./components/pages/HealingClinics";
+import Membership from "./components/pages/Membership";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/Development&Training" component={Development} />
         <Route exact path="/HealingClinics" component={HealingClinics} />
+        <Route exact path="/BecomeAMember" component={Membership} />
         {/* <Form /> */}
       </BrowserRouter>
       <Footer />
