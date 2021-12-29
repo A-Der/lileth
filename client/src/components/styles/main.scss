@@ -513,7 +513,7 @@ body {
 //* START OF CONTACT PAGE *//
 .contact-page{
   height: 800px;
-  // background-color: rgb(16, 16, 43);
+  background-color: rgba(255, 255, 255, 0.63);
 
   .contact-title {
     color: whitesmoke;
@@ -536,5 +536,13 @@ body {
         margin-right: 10px;
       }
     }
+  }
+
+  .contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
   }
 }
