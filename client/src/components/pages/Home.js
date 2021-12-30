@@ -33,7 +33,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-}
+  }
 
   render() {
     const {
@@ -175,24 +175,47 @@ class Home extends React.Component {
                   ariaHideApp={false}
                   overlayClassName="Overlay"
                 >
-                  Reiki is a non-invasive treatment and can be used on all age
-                  groups from babies to pensioners, regardless of present
-                  medical complications. It is a complimentary and not an
-                  alternative to medical treatment An example of some of the
-                  symptoms Reiki has helped people with are, pain relief, back
-                  problems, anxiety, headaches, stomach upsets, sinus problems,
-                  blood pressure and asthma, just to mention a few.. Reiki has
-                  been regulated and approved by the Complementary and Natural
-                  Healthcare Council (CNHC). Reiki (pronounced ray-key) is
-                  defined as spiritual energy, or the beautiful and loving life
-                  force that surrounds and embodies all living things. When we
-                  experience stress, pain, illness or worry, our energy often
-                  becomes unbalanced, impeding the natural flow of energy
-                  through the body. Reiki helps to return the body’s flow of
-                  energy to its intended state of harmony and creates a state of
-                  peacefulness and calming. Reiki is a holistic, natural
-                  hands-on system that promotes healing in body, mind and
-                  spirit.
+                  <p>
+                    <h1 className="modal-title">What is it?</h1>
+                    Reiki (pronounced ray-key) is defined as spiritual energy,
+                    or the beautiful and loving life force that surrounds and
+                    embodies all living things. It is non-invasive and can be
+                    used on all age groups from babies to pensioners, regardless
+                    of present medical complications.
+                  </p>
+                  <br></br>
+                  <p>
+                    <h1 className="modal-title">How can it help us?</h1>
+                    When we experience stress, pain, illness or worry, our
+                    energy often becomes unbalanced, impeding the natural flow
+                    of energy through the body.
+                    <br></br>
+                    Reiki helps to return the body’s flow of energy to its
+                    intended state of harmony and creates a state of
+                    peacefulness and calming. Reiki is a holistic, natural
+                    system that promotes healing in body, mind and spirit.
+                    <br></br>
+                    It is complimentary and not an alternative to medical
+                    treatment.
+                  </p>
+                  <br></br>
+                  An example of some of the symptoms Reiki has helped people
+                  with are:
+                  <ul>
+                    <li>• Pain Relief</li>
+                    <li>• Back Problem</li>
+                    <li>• Anxiety</li>
+                    <li>• Headaches</li>
+                    <li>• Stomach Problems</li>
+                    <li>• Sinus Problems</li>
+                    <li>• Blood Pressure</li>
+                    <li>• Asthma</li>
+                  </ul>
+                  just to mention a few..
+                  <br></br>
+                  <br></br>
+                  Reiki has been regulated and approved by the Complementary and
+                  Natural Healthcare Council (CNHC).
                 </ReactModal>
               </div>
             </div>
@@ -207,9 +230,6 @@ class Home extends React.Component {
               <div className="boxContent">
                 <i className="fa fa-calendar icon"></i>
                 <h1 className="title">What is Aromatherapy Massage?</h1>
-                {/* <p className="desc">
-                  Monthly session to practice learning Angel and Fairy Cards
-                </p> */}
 
                 <br></br>
                 <img
@@ -223,15 +243,32 @@ class Home extends React.Component {
                   ariaHideApp={false}
                   overlayClassName="Overlay"
                 >
-                  Aromatherapy Massage is a non-invasive treatment and can be
-                  used on all age groups from babies to pensioners. It is
-                  complimentary and not an alternative to medical treatment.
-                  Usually the massage will involve back, shoulders, neck, arms
-                  and hands. Using aromatic oils mixed with a base oil and
-                  lightly massaged on mentioned areas. The oils are chosen by
-                  the therapist according to the patient’s needs. However, any
-                  current medical condition should be discuss with the therapist
-                  beforehand.
+                  Aromatherapy Massage is a hands-on, non-invasive treatment and
+                  can be used on all age groups. It is complimentary and not an
+                  alternative to medical treatment.
+                  <br></br>A light, calming massage using a blend of oils, which
+                  works the whole body. Using blended aromatherapy oils, this
+                  massage is personally tailored to the individual’s needs. This
+                  massage will treat all areas of the body most prone to stress
+                  and tension, such as the back, shoulders and neck, along with
+                  the upper and lower legs, arms and hands.
+                  <br></br>
+                  <br></br>
+                  <h1 className="modal-title">How will this benefit us?</h1>
+                  <ul>
+                    <li>
+                      • Provides a relaxing and revitalising experience which
+                      helps the body physically and mentally
+                    </li>
+                    <li>• Eases the symptoms of stiff, tired joints</li>
+                    <li>
+                      • Encourages improved circulation and speeds up digestion
+                    </li>
+                    <li>• Stress relief and improvement on sleep</li>
+                  </ul>
+                  <br></br>
+                  Any current medical condition should be discuss with the
+                  therapist beforehand.
                 </ReactModal>
               </div>
             </div>
@@ -246,9 +283,6 @@ class Home extends React.Component {
               <div className="boxContent">
                 <i className="fa fa-podcast icon"></i>
                 <h1 className="title">Thinking Of Becoming A Healer?</h1>
-                {/* <p className="desc">
-                  Talk to us if you are considering a path in Spiritual Healing
-                </p> */}
                 <br></br>
                 <img
                   src={leaderImg}
@@ -304,9 +338,6 @@ class Home extends React.Component {
               <div className="boxContent">
                 <i className="fa fa-podcast icon"></i>
                 <h1 className="title">What Are Psychic Readings?</h1>
-                {/* <p className="desc">
-                  We hold monthly special events on a Saturday evening
-                </p> */}
                 <br></br>
                 <img
                   src={tarotImg}

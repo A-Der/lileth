@@ -1,7 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router";
 import phone from "../styles/assets/phone-call-white.png";
-import { Button, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+import { toast } from 'bulma-toast'
 
 class Contact extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Contact extends React.Component {
       senderEmail: "",
       number: "",
       email: "tamdee13@gmail.com", // send to lileth email
+      isLoading: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,19 +23,36 @@ class Contact extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  handleToast = message => toast({
+    message: message,
+    position: 'bottom-center',
+    type: 'is-success is-light',
+    duration: '3000',
+    animate: { in: 'fadeIn', out: 'fadeOut' },
+  });
+
+  resetForm = () => this.setState({ feedback: "", name: "", senderEmail: "", number: "", isLoading: false });
+
+  onResponse = res => {
+    console.log("Email successfully sent!");
+    this.handleToast('Message Sent Successfully!')
+    this.resetForm();
+  }
+
+  onError = (err) => {
+    console.error(
+      "Oh well, you failed. Here some thoughts on the error that occured:",
+      err
+    );
+    this.handleToast('Something went wrong, please contact us directly');
+    this.resetForm();
+  };
+
   sendFeedback(templateId, variables) {
-    console.log(variables);
     window.emailjs
       .send("service_76f082x", templateId, variables)
-      .then((res) => {
-        console.log("Email successfully sent!");
-      })
-      .catch((err) =>
-        console.error(
-          "Oh well, you failed. Here some thoughts on the error that occured:",
-          err
-        )
-      );
+      .then((res) => this.onResponse())
+      .catch((err) => this.onError(err));
   }
 
   handleSubmit(event) {
@@ -46,6 +65,8 @@ class Contact extends React.Component {
       from_name: fromName,
       reply_to: email,
     });
+
+    this.setState({ isLoading: true });
   }
 
   handleChange(event, fieldName) {
@@ -53,8 +74,7 @@ class Contact extends React.Component {
   }
 
   render() {
-    // console.log(Formm)
-    const { name, senderEmail, number, feedback } = this.state;
+    const { name, senderEmail, number, feedback, isLoading } = this.state;
     return (
       <div className="contact-page">
         <div className="contact-title">
@@ -105,14 +125,12 @@ class Contact extends React.Component {
             value={feedback}
           />
           <br></br>
-          <Button
-            // variant="contained"
-            value="Submit"
-            color="success"
+          <button
+            className={`button is-primary ${isLoading && "is-loading"}`}
             onClick={this.handleSubmit}
           >
-            Submit
-          </Button>
+            Send
+          </button>
         </div>
       </div>
     );

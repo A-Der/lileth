@@ -11,6 +11,7 @@ function Navbar() {
   const healing = "/HealingClinics";
   const membership = "/BecomeAMember";
   const contact = "/Contact";
+  const events = "/Events";
 
   const handleOnMouse = (direction = "e") => {
     if (direction === "e") {
@@ -38,7 +39,7 @@ function Navbar() {
           />
         </Link>
       </div>
-      <div class="nav-end">
+      <div className="nav-end">
         <Link to={development} className={getClassName(development)}>
           <span>Development & Training</span>
         </Link>
@@ -46,7 +47,7 @@ function Navbar() {
           Healing Clinics
         </Link>
 
-        <Link className="nav-item">Events</Link>
+        <Link to={events} className={getClassName(events)}>Events</Link>
         <Link to={membership} className={getClassName(membership)}>
           Become A Member
         </Link>

@@ -14,7 +14,7 @@ class HealingClinics extends React.Component {
     return (
       <div className="hc-page">
         <div className="hc-hero" data-aos="fade-in" data-aos-duration={2000}>
-          <div className="dev-hero-info">
+          <div className="hc-hero-info">
             <span className="hc-title"> Healing Clinics</span>
             <span className="hc-subtitle">
               Spiritual healing can provide a peaceful uplifting experience of

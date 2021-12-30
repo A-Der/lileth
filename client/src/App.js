@@ -3,7 +3,6 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { getPosts } from "./_actions/posts";
-import Form from "./components/form/Form";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import Home from "./components/pages/Home";
@@ -11,6 +10,7 @@ import Development from "./components/pages/Development";
 import HealingClinics from "./components/pages/HealingClinics";
 import Membership from "./components/pages/Membership";
 import Contact from "./components/pages/Contact";
+import Events from "./components/pages/Events";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/HealingClinics" component={HealingClinics} />
         <Route exact path="/BecomeAMember" component={Membership} />
         <Route exact path="/Contact" component={Contact} />
-        {/* <Form /> */}
+        <Route exact path="/Events" component={Events} />
       </BrowserRouter>
       <Footer />
     </>

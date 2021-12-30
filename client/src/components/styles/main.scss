@@ -111,9 +111,15 @@ section.section {
   background-color: rgba(0, 0, 0, 0.76);
 }
 
+.modal-title{
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .hero,
 .dev-hero,
-.hc-hero {
+.hc-hero,
+.events-hero {
   background-image: url(./assets/falls-yellow.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,7 +134,9 @@ section.section {
 .home-info,
 .hero-info,
 .dev-hero-info,
-.membership-info {
+.hc-hero-info,
+.membership-info,
+.events-hero-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,11 +163,12 @@ section.section {
 }
 
 .home-text {
+  // color: rgb(14, 12, 12);
   font-size: 25px;
   text-align: center;
   width: 60%;
   margin: auto;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.692);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.685);
 }
 
 .class-info {
@@ -281,25 +290,28 @@ body {
 }
 
 .dev-hero-info,
-.hc-hero-info {
+.hc-hero-info,
+.events-hero-info{
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.308);
   z-index: 99;
   display: flex;
   align-content: center;
   justify-content: center;
 
   .dev-title,
-  .hc-title {
+  .hc-title,
+  .events-title{
     text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
   }
-
+  
   .dev-subtitle,
-  .hc-subtitle {
+  .hc-subtitle,
+  .events-subtitle {
     text-align: center;
     font-size: 25px;
     text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
@@ -544,5 +556,37 @@ body {
     width: 60%;
     margin: auto;
     margin-top: 50px;
+
+    .contact-submit-button{
+      background-color: cadetblue;
+    }
+  }
+}
+//* END OF CONTACT PAGE *//
+
+
+//* START OF EVENTS PAGE *//
+.events-page{
+  height: 500em;
+  // margin: 100px;
+  .events-hero{
+    background-image: url(./assets/card-reading.jpeg);
+    height: 45em;
+    background-size: cover;
+
+    .events-title{
+      text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+    }
+    
+    .events-subtitle {
+      text-align: center;
+      font-size: 25px;
+      text-shadow: 0px 2px 2px rgb(0 0 0 / 60%);
+      width: 75%;
+    }
+    
+  }
+  .events-body{
+    height: 20em;
   }
 }
