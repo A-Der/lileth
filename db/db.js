@@ -1,6 +1,8 @@
-import mongoose from 'mongoose'
-
-mongoose.connect('mongodb+srv://A-Der:Empirewonder8138*@cluster0.5xcvr.mongodb.net/spirit?retryWrites=true&w=majority', { 
-  useNewUrlParser: true, 
-  useCreateIndex: true, 
-  useUnifiedTopology: true })
+// import mongoose from 'mongoose'
+// import dotenv from 'dotenv'
+// dotenv.config()
+// // dont think i need this page
+// mongoose.connect(process.env.MONGO_DB_URI, { 
+//   useNewUrlParser: true, 
+//   useCreateIndex: true, 
+//   useUnifiedTopology: true })
